@@ -1,0 +1,113 @@
+- Download most recent "specieswiki-latest-pages-articles.xml" from
+  http://dumps.wikimedia.org/specieswiki/latest/
+
+- Download the HTML for image-containing pages into HTML/
+  (Skips overwrites, so if there's a problem with the HTML, delete first)
+  ./getImageHTML.pl < specieswiki-latest-pages-articles.xml
+
+- Download the images on those pages into Images/
+  ./getImages.pl
+  rm -r HTML  # 1G of .html no longer needed
+
+- Convert PNG, GIF, JPEG with convert[...].pl scripts
+  cd Images.NEW
+  mkdir PNG; mv *.png PNG; mkdir GIF; mv *.gif GIF; mkdir JPEG; mv *.jpeg JPEG
+  cp ../convert*.pl .
+  mv convertPNG.pl PNG; mv convertGIF.pl GIF; mv convertJPEG.pl JPEG
+  cd PNG; ./convertPNG.pl; mv -i *.jpg ..; cd .. # do by hand; too much for mv
+  cd GIF; ./convertGIF.pl; mv -i *.jpg ..; cd ..
+  cd JPEG; ./convertJPEG.pl; mv -i *.jpg ..; cd ..
+
+- Erase broken images (check those under 100bytes)
+  (Currently none appear to be broken...)
+
+- Put images somewhere special for safekeeping.
+  mv Images.NEW Images
+
+- Resize images into new directory.
+  Run from base directory, looks for Images/*.jpg, creates new directory
+    Images.SHRUNK
+  Has benefits of (a) not copying seriously corrupt images, and
+                  (b) warning about partially downloaded images
+  At the moment, shrinkImages.pl also GROWS small images
+  ./shrinkImages.pl
+  mv Images Images.ORIG; mv Images.SHRUNK Images
+
+- Fix regex-breaking titles in specieswiki-latest-pages-articles.xml:
+  <title>* Mystacidium curvatum</title>
+  (Change * to x)
+
+- Convert wiki into links and common names
+  ./buildTree.pl < specieswiki-latest-pages-articles.xml 2> buildTree.LOG > TREE.txt
+
+- Fix weird things (maybe not technically errors):
+    Remove Dictyozoa -> Bikonta
+    Revive †Synapsida
+    Theria -> Placentalia  (same as Eutheria)
+
+- Add top of tree
+  Up -> {Biota}
+  Biota -> {Acytota} {Cytota}
+  Cytota -> {Bacteria} {Neomura}
+  Remove: Superregio -> {Regio} {Eukaryota} {Archaea} {Bacteria}
+
+  Remove PAGENAME, BASEPAGENAME, etc. from resulting TREE.txt
+    (or better yet, debug buildTree.pl)
+  :1,$s/ {*PAGENAME}*//g
+  :1,$s/ {*BASEPAGENAME}*//g
+  :1,$s/ {TOC[^}]*}//g
+
+- Deal with any other problems... (see Errors.txt): 
+
+- Filter out the results
+  grep "{" TREE.txt > LINKS.txt
+  grep "=" TREE.txt > NAMES.txt
+
+- Cut off long links and write out DEAD.txt for † 
+  (Note, this gives a bunch of worrisome warnings, but appears to get
+    the job done...)
+  ./pruneLinks.pl < LINKS.txt 2> pruneLinks.LOG > PRUNED.txt
+
+- Double Check Eukaryota -> Bikonta
+
+------------------------------------------------------------------------
+
+- Create raw graph files:  (~ 1hr)
+
+  # THIS CAN SEGFAULT! WHY?
+  ./calcBests.Batch.pl Biota 2> calcBests.Batch.LOG < PRUNED.txt;
+
+mkdir SVG
+
+- Create a single SVG, for testing:
+  ./run.pl Species Parent
+
+- Create SVG's:  (~2hrs)
+  ./run.batch.pl Biota Up < PRUNED.txt
+
+- Update directory links
+  ./webifyAll.sh
+
+- Enable zooming, panning (best in Chrome, Safari, okay in FF, no IE?)
+  ./spiffSVGAll.sh
+
+- Edit Biota.svg to point up to Wikispecies instead of Up.svg
+  (http://species.wikimedia.org/wiki/Main_Page)
+
+- Create common name index
+  ./makeNameList.pl < NAMES.txt > NameList.html
+
+---------------------------------------------------------------------------------------------------------
+
+- Rerun individual graphs (includes webify and spiffyify)
+  ./rerun Species
+
+- Rerun graphs that break Graphviz layout by tweaking these numbers in
+  makeGraph.pl:
+
+  $sep = max(2,int(15-200/$length));     # try adding 1 (or 2 if necessary)
+  $esep = max(3.9,int(10-100/$length));  # try subtracting 1
+
+  DON'T forget to reset these parameters before next normal run
+
+- Rerun graphs with bad color
