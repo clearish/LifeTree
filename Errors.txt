@@ -1,0 +1,111 @@
+--- Fixed on neither LifeTree website nor Wikispecies ---
+Flammulina and Flammulina_zebra have pictures of the wrong species
+
+--- Fixed on LifeTree, not on Wikispecies (Ever?) ---
+
+  Dictyozoa -> Bikonta
+  Theria -> Eutheria, Placentalia (duplicates)
+
+  Chascolytrum -> L. -> Carolus Linnaeus
+  Rumex acetosa -> L. -> Carolus Linnaeus
+  Pagellus acarne -> Risso -> Antoine Risso
+
+--- Fixed LifeTree, not on Wikispecies (Yet) ---
+
+Abyssogammarinae -> Laxmannia
+Aedini -> Macleaya
+Agapanthiini -> Ludwigia
+Alydidae -> Trachelium
+Anisodactylina -> Anisostichus -> Bignonia
+Aristiidae -> Perrierella -> Oeonia
+Asilidae -> Chrysopogon
+Asilidae -> Heteropogon
+Asilidae -> Holopogon -> Neottia
+Bathycheilidae -> Calymenia -> Mirabilis sect. Oxybaphus
+Bolboceratinae -> Bolbodium -> Dendrobium
+Bombyliidae -> Antonia
+Bombyliidae -> Cytherea -> Calypso 
+Bombyliidae -> Lomatia
+Ceratopogonidae -> Oxyria
+Ceratopogonini -> Oxyria
+Chalcosiinae -> Amesia -> Epipactis
+Charopidae -> Lenwebbia
+Cicadellidae -> Digitalis
+Crambini -> Arequipa -> Oreocereus
+Curculionidae -> Solaria
+Eulophidae -> Eulophus -> Eulophia
+Eulophinae -> Eulophus -> Eulophia
+Eumastacinae -> Santanderia -> Magnolia
+Formicidae -> Rogeria
+Gabuniina -> Gabunia -> Tabernaemontana
+Gustaviidae -> Gustavia
+Hadeninae -> Polia -> Cypella
+Hadeninae -> Saltia
+Harpalinae -> Anisostichus -> Bignonia
+Harpalini -> Anisostichus -> Bignonia
+Hermannieae -> Hermannia
+Hypodematiaceae -> Hypodematium -> Eulophia
+Lasiurus_(Poaceae) -> Lasiurus_borealis -> Lasiurus_(Lasiurus)_borealis
+Lasiurus_(Poaceae) -> Lasiurus_cinereus -> Lasiurus_(Lasiurus)_cinereus
+Lyriini -> Callipara -> Calosoma (Calosoma)
+Madarini -> Solaria
+Majidae -> Herbstia
+Meroscelisini -> Howea
+Micrelytrinae -> Trachelium
+Mirini -> Eurystylus -> Canna
+Muscidae -> Reinwardtia
+Nassarius -> Gussonea -> Solenangis
+Notiobii -> Anisostichus -> Bignonia
+Odontiinae -> Aporodes -> Eria
+Odontiinae -> Turania
+Oecophorinae -> Callithauma -> Clinanthus
+Onciderini -> Jamesia
+Onthophilinae -> Sigillum -> Polygonatum
+Pachychilidae -> Pachychilus -> Pachystoma
+Panaphantina -> Thesium
+Passalidae -> Oileus -> Narcissus
+Petalochilini -> Petalochilus -> Caladenia
+Pisaniinae -> Pollia
+Platynina -> Agelaea
+Platynini -> Agelaea
+Platyphyllini -> Xiphophyllum -> Cephalanthera
+Plinthina -> Plinthus
+Proculini -> Oileus -> Narcissus
+Pseudococcinae -> Sphaerococcus
+Pteropliini -> Penthea -> Disa
+Reinwardtiini -> Reinwardtia
+Rhytidosteidae -> Derwentia -> Veronica
+Ropalomeridae -> Mexicoa -> Oncidium
+Sphenophorini -> Billbergia
+Tachinidae -> Sturmia -> Liparis (Orchidaceae)
+Unassigned_Catantopinae -> Barombia -> Aerangis
+Varunidae -> Utica -> Theclinesthes
+Warramungini -> Georgina -> Dahlia (Asteraceae)
+
+--- Previous issues (now fixed on WikiSpecies; thanks, Koumz!) ---
+
+Anacampsini -> Sophronia -> Cattleya
+Baleinae -> Liatris -> Lacinaria
+Baleinae -> Vestia
+Centaureinae -> Oligochaeta
+Cochlespirinae -> Turricula
+Curculionidae -> Diuris, Eueides, Methone
+Cymatium -> many authors
+Ellobiinae -> Ellobium
+Herminiinae -> Pogonia
+Incertae_sedis_(Athetini) -> Alpinia
+Labroidei -> Cichlidae, Embiotocidae, Pomacentridae
+Limapontiidae -> Olea
+Melastomataceae -> Dionycha
+Membracidae -> Rhexia
+Merodontini -> Cepa -> Allium
+Opatrini -> Anemia
+Orithyiidae -> Orithyia -> Tulipa
+Pertusaria_globospora -> Araucaria_heterophylla
+Pyrgotidae->Osa
+Richardiidae->Richardia
+Scaphidiinae -> Scaphium
+Scaphiini -> Scaphium
+Stenammini -> Rogeria
+Syrphidae -> Cepa -> Allium
+Unassigned_Anthemideae -> Heteromera -> Tenebrionoidea
